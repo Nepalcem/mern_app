@@ -3,16 +3,18 @@ import dotenv from "dotenv";
 
 import notesRoutes from "./src/routes/notesRoutes.js";
 import db from "./db_config/db.js";
+import rateLimiter from "./middleWares/rateLimiter.js";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-db();
-app.use(express.json());
-app.use("/api/notes", notesRoutes);
-
-app.listen(PORT, () => {
-  console.log("Server started on PORT 3000");
+db().then(() => {
+  app.listen(PORT, () => {
+    console.log("Server started on PORT 3000");
+  });
 });
+app.use(express.json());
+app.use(rateLimiter);
+app.use("/api/notes", notesRoutes);
