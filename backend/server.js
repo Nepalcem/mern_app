@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 
 import notesRoutes from "./src/routes/notesRoutes.js";
 import db from "./db_config/db.js";
@@ -17,4 +18,5 @@ db().then(() => {
 });
 app.use(express.json());
 app.use(rateLimiter);
+app.use(cors());
 app.use("/api/notes", notesRoutes);
