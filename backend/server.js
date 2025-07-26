@@ -16,7 +16,7 @@ db().then(() => {
     console.log("Server started on PORT 3000");
   });
 });
+app.use(cors());
 app.use(express.json());
 app.use(rateLimiter);
-app.use(cors());
 app.use("/api/notes", notesRoutes);
