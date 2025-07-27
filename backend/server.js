@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3001;
 
 db().then(() => {
   app.listen(PORT, () => {
-    console.log("Server started on PORT 3000");
+    console.log(`Server started on PORT ${PORT}`);
   });
 });
 app.use(cors());

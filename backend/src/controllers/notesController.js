@@ -16,7 +16,6 @@ async function getAllNotes(req, res) {
 async function createNote(req, res) {
   try {
     const { title, content } = req.body;
-    console.log(title, content);
     if (!title || !content) {
       res.status(500).json({ message: "missing fields" });
       return;
