@@ -3,19 +3,19 @@
 To run the backend locally open backend folder and use in terminal:
 ```bash
 npm run dev
-
+```
 To run the frontend locally open frontend folder and use in terminal:
 ```bash
 npm run dev
-
+```
 Before pushing commits you need to build the Frontend part with:
 ```bash
 npm run build
-
+```
 Then force re-deploy with:
 ```bash
 vercel --prod
-
+```
 More details here - https://medium.com/@avinashukla0704/how-to-deploy-a-combined-react-and-node-js-app-on-vercel-2cb75574cad9
 
 
