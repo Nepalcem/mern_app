@@ -41,7 +41,7 @@ const HomePage = () => {
     <div className="min-h-screen">
       <Navbar />
       {isRateLimited && <RateLimitedUi />}
-      <div className="max-w-7xl mx-auto pt-8 pl-8">
+      <div className="max-w-7xl mx-auto pt-8 pl-8 pr-8">
         {loading && (
           <div className="text-center text-primary py-10">Loading Notes...</div>
         )}
